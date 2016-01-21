@@ -33,8 +33,20 @@ var countUpBy = function(countBy, countTo) {
   return outputArray;
 }//countUPB
 
-
-
 $(document).ready(function() {
+  $("form.input").submit(function(event){
+    var countBy = parseInt($("input#countBy").val());
+    var countTo = parseInt($("input#countTo").val());
+    var stepOne = valueCheck(countBy, countTo);
 
+    if (stepOne === true) {//IMPORTANT YOU BETTER READ THIS. We assigned stepOne === true so that it can CHECK if it's true. If we wrote stepOne = true, then we literally assigned stepOne to be true. (This is why our program didn't work)
+      var stepTwo =  countUpBy(countBy, countTo);
+      $("#output").text(stepTwo);
+    } else {
+      alert("That's not possible, human. Use integers and/or refer to your number line.");
+
+    }
+    //$("#result").show();
+    event.preventDefault();
+  });
 });
