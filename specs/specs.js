@@ -1,10 +1,19 @@
 describe("valueCheck", function(){
-  it("detect if countBy is < countTo for positive numbers", function() {
+  it("detect if countBy is < countTo for two positive numbers", function() {
     expect(valueCheck(5,10)).to.equal(true);
+  });
+  it("detect if countBy is > countTo for two negative numbers", function() {
+    expect(valueCheck(-5,-10)).to.equal(true);
+  });
+  it("detect if countBy and countTo are BOTH negative or BOTH positive", function() {
+    expect(valueCheck(-5, 10)).to.equal(false);
   });
 });
 
 describe("countUpBy", function() {
+  it("counts by 1 until a given number", function() {
+    expect(countUpBy(1,10)).to.eql([1,2,3,4,5,6,7,8,9,10]);
+  });
   it("count by a given number until a certain number", function() {
     expect(countUpBy(2,22)).to.eql([2,4,6,8,10,12,14,16,18,20,22]);
   });
@@ -18,10 +27,4 @@ describe("countUpBy", function() {
   //it will detect if count by is > than count to for positive
   //it will detect if countby is < than countto for negative
   //for both, return an alert that says u r dum
-});
-
-describe("countByOne", function() {
-  it("counts by 1 until a given number", function() {
-    expect(countByOne(1,10)).to.eql([1,2,3,4,5,6,7,8,9,10]);
-  });
 });
