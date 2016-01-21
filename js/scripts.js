@@ -1,11 +1,18 @@
 var countUpBy = function(countBy, countTo) {
   // it will take any number given in the count by, add it to itself, until it reaches countTo. It will store these numbers in an array.
   var outputArray = [];
+
+  if  ((countBy < 0 ) && (countTo < 0)) {
+    for (var index = countBy; index >= countTo; index += countBy) {
+      outputArray.push(index);
+    }
+  } else {
   for (var index = countBy; index <= countTo; index += countBy) {
     outputArray.push(index);
-  }
+    }//for loop
+  }//else
   return outputArray;
-}
+}//countUPB
 var countByOne = function(){
   // it could countby a given number until it reaches another number. It will store these values into an array
   var numberArray = [];
