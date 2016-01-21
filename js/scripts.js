@@ -1,12 +1,12 @@
 
 var valueCheck = function(countBy, countTo){
-  if ((countBy > 0) && (countTo > 0)) {
+  if ((countBy > 0) && (countTo > 0) && (countTo < 1001) ) {
     if (countBy < countTo) {
       return true;
     } else {
       return false;
     }
-  } else if ((countBy < 0) && (countTo < 0)) {
+  } else if ((countBy < 0) && (countTo < 0) && (countTo > -1001)) {
     if (countBy > countTo) {
       return true;
     } else {
@@ -43,7 +43,7 @@ $(document).ready(function() {
       var stepTwo =  countUpBy(countBy, countTo);
       $("#output").text(stepTwo);
     } else {
-      alert("That's not possible, human. Use integers and/or refer to your number line.");
+      alert("That's not possible, human. Use integers and/or refer to your number line. The countTo must have a range between -1000 & 1000.");
 
     }
     //$("#result").show();
