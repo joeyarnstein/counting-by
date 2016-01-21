@@ -8,6 +8,15 @@ describe("valueCheck", function(){
   it("detect if countBy and countTo are BOTH negative or BOTH positive", function() {
     expect(valueCheck(-5, 10)).to.equal(false);
   });
+  it("detect if countBy and countTo are not intergers", function() {
+    expect(valueCheck("hello", "hi")).to.equal(false);
+  });
+  it("detect if there are more than two inputs", function() {
+    expect(valueCheck(5,5,5)).to.equal(false);
+  });
+  it("detect if there are less than two inputs", function() {
+    expect(valueCheck(5)).to.equal(false);
+  });
 });
 
 describe("countUpBy", function() {

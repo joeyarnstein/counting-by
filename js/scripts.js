@@ -6,16 +6,17 @@ var valueCheck = function(countBy, countTo){
     } else {
       return false;
     }
-  } else {
-    if ((countBy < 0) && (countTo < 0)) {
-      if (countBy > countTo) {
-        return true;
-      } else {
-        return false;
-      }
+  } else if ((countBy < 0) && (countTo < 0)) {
+    if (countBy > countTo) {
+      return true;
+    } else {
+      return false;
     }
+  } else {
+    return false;
   }
 }
+
 var countUpBy = function(countBy, countTo) {
   // it will take any number given in the count by, add it to itself, until it reaches countTo. It will store these numbers in an array.
   var outputArray = [];
