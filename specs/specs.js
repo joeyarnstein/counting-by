@@ -1,3 +1,9 @@
+describe("valueCheck", function(){
+  it("detect if countBy is < countTo for positive numbers", function() {
+    expect(valueCheck(5,10)).to.equal(true);
+  });
+});
+
 describe("countUpBy", function() {
   it("count by a given number until a certain number", function() {
     expect(countUpBy(2,22)).to.eql([2,4,6,8,10,12,14,16,18,20,22]);
