@@ -1,12 +1,12 @@
 
 var valueCheck = function(countBy, countTo){
-  if ((countBy > 0) && (countTo > 0) && (countTo < 1001) ) {
+  if ((countBy > 0) && (countTo > 0) && (countTo < 10001) ) {
     if (countBy < countTo) {
       return true;
     } else {
       return false;
     }
-  } else if ((countBy < 0) && (countTo < 0) && (countTo > -1001)) {
+  } else if ((countBy < 0) && (countTo < 0) && (countTo > -10001)) {
     if (countBy > countTo) {
       return true;
     } else {
@@ -41,9 +41,10 @@ $(document).ready(function() {
 
     if (stepOne === true) {//IMPORTANT YOU BETTER READ THIS. We assigned stepOne === true so that it can CHECK if it's true. If we wrote stepOne = true, then we literally assigned stepOne to be true. (This is why our program didn't work)
       var stepTwo =  countUpBy(countBy, countTo);
-      $("#output").text(stepTwo);
+      var stepTwoString = stepTwo.toString().replace(/,/g, ", ");//convert our array of numbers to a string. Then replace all "," (g=globally) with ", "(comma space)
+      $("#output").text(stepTwoString);
     } else {
-      alert("That's not possible, human. Use integers and/or refer to your number line. The countTo must have a range between -1000 & 1000.");
+      alert("That's not possible, human. Use integers and/or refer to your number line. The countTo must have a range between -10000 & 10000.");
 
     }
     //$("#result").show();
